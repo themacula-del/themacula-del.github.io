@@ -1115,7 +1115,8 @@ window.addEventListener('load',()=>{
 });
 // Set feature images from the real uploaded portfolio assets.
 const ints=DATA.filter(x=>x.category==='interior'), arch=DATA.filter(x=>x.category==='architecture');
-if(ints[0])document.getElementById('interiorHero').src=ints[0].src;if(arch[0])document.getElementById('architectureHero').src=arch[0].src;
+if(ints[0])document.getElementById('interiorHero').src=ints[0].src;
+document.getElementById('architectureHero').src='./assets/architecture-hero.webp';
 
 // V20 — expandable service trades
 document.querySelectorAll('.service-trigger').forEach(btn=>{btn.addEventListener('click',()=>{const row=btn.closest('.service-expandable');const open=row.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');document.querySelectorAll('.service-expandable.open').forEach(other=>{if(other!==row){other.classList.remove('open');const b=other.querySelector('.service-trigger');if(b)b.setAttribute('aria-expanded','false')}})})});
