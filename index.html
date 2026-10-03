@@ -2283,18 +2283,21 @@ document.querySelectorAll('.service-trigger').forEach(btn=>{btn.addEventListener
   function escapeHtml(v){
     return String(v==null?'':v).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   }
+  function normalizeStatus(raw){
+    return String(raw||'OPEN').trim().toUpperCase().replace(/[_-]+/g,' ').replace(/\s+/g,' ');
+  }
   function statusIndex(raw){
-    const s=String(raw||'OPEN').toUpperCase().replace(/[_-]+/g,' ');
-    if(/COMPLETED|RESOLVED|CLOSED|DONE/.test(s)) return 3;
-    if(/WAITING|PENDING|RESOLUTION/.test(s)) return 2;
-    if(/IN PROGRESS|PROCESSING|IN REVIEW|REVIEW/.test(s)) return 1;
+    const s=normalizeStatus(raw);
+    if(/^(SELESAI|COMPLETED|RESOLVED|CLOSED|DONE)$/.test(s)) return 3;
+    if(/^(MENUNGGU|WAITING|PENDING|WAITING FOR RESOLUTION|RESOLUTION)$/.test(s)) return 2;
+    if(/^(PROSES|MULAI PROSES|SEDANG DIPROSES|DIPROSES|IN PROGRESS|PROCESSING|IN REVIEW|REVIEW|PROCESS)$/.test(s)) return 1;
     return 0;
   }
   function statusLabel(raw){
-    const s=String(raw||'OPEN').toUpperCase().replace(/[_-]+/g,' ');
-    if(/COMPLETED|RESOLVED|CLOSED|DONE/.test(s)) return 'COMPLETED';
-    if(/WAITING|PENDING|RESOLUTION/.test(s)) return 'WAITING FOR RESOLUTION';
-    if(/IN PROGRESS|PROCESSING|IN REVIEW|REVIEW/.test(s)) return 'IN PROGRESS';
+    const s=normalizeStatus(raw);
+    if(statusIndex(s)===3) return 'COMPLETED';
+    if(statusIndex(s)===2) return 'WAITING FOR RESOLUTION';
+    if(statusIndex(s)===1) return 'IN PROGRESS';
     return 'TICKET RECEIVED';
   }
   function renderLiveTicket(ticket,data){
