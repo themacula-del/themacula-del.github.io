@@ -1436,6 +1436,18 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
  .track-live-meta{padding:15px 16px;gap:12px;font-size:9px}
 }
 </style>
+<style>
+/* THE MACULA — Support utility links */
+.lux-menu-support{position:relative;z-index:2;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.11)}
+.lux-menu-support-label{font-size:7px;letter-spacing:.30em;color:#5f5d58;text-transform:uppercase;margin-bottom:9px}
+.lux-menu-support-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lux-menu-support-links a{display:flex!important;align-items:center;justify-content:space-between;width:auto!important;max-width:none!important;padding:9px 10px!important;border:1px solid rgba(229,161,91,.30)!important;border-radius:999px!important;font-family:var(--body)!important;font-size:8px!important;letter-spacing:.12em!important;color:#c8c6c0!important;line-height:1.1!important;transform:none!important;transition:.3s ease!important}
+.lux-menu-support-links a:after{display:none!important;content:none!important}
+.lux-menu-support-links a:hover,.lux-menu-support-links a:focus{background:rgba(229,161,91,.10)!important;border-color:rgba(229,161,91,.65)!important;color:#fff!important;transform:none!important;letter-spacing:.12em!important;padding-left:10px!important;outline:none!important}
+.lux-menu-support-links a span{font-size:12px;letter-spacing:0;transition:transform .3s ease}
+.lux-menu-support-links a:hover span,.lux-menu-support-links a:focus span{transform:translate(2px,-2px)}
+@media(max-width:700px){.lux-menu-support{margin-top:12px;padding-top:11px}.lux-menu-support-label{font-size:5px;letter-spacing:.24em;margin-bottom:6px}.lux-menu-support-links{gap:6px}.lux-menu-support-links a{padding:8px 8px!important;font-size:6.5px!important;letter-spacing:.10em!important}.lux-menu-support-links a:hover,.lux-menu-support-links a:focus{letter-spacing:.10em!important;padding-left:8px!important}.lux-menu-support-links a span{font-size:10px}}
+</style>
 </head>
 <body><div class="grain"></div><div class="pre"><img src="./assets/asset-001.webp" alt="THE MACULA"></div>
 <header class="header" id="header"><a class="brand" href="#top"><img src="./assets/asset-001.webp" alt="THE MACULA"></a><nav class="nav" aria-label="Main navigation"><a href="./index.html" data-nav="home">Home</a><a href="./services.html" data-nav="services">Services</a><a href="./portfolio.html" data-nav="portfolio">Portfolio</a><a href="./materials.html" data-nav="material">Material</a><a href="./index.html#about" data-nav="about">About</a><a href="./index.html#contact" data-nav="contact">Contact</a></nav><button class="menu" id="menuBtn">Menu</button></header>
@@ -1454,6 +1466,14 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
       <a href="./index.html#about"><span class="lux-label">ABOUT</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./index.html#contact"><span class="lux-label">CONTACT</span><span class="lux-arrow" aria-hidden="true">→</span></a>
     </nav>
+
+    <div class="lux-menu-support" aria-label="Support">
+      <div class="lux-menu-support-label">SUPPORT</div>
+      <div class="lux-menu-support-links">
+        <a href="./complaint.html">SUBMIT A COMPLAINT <span>↗</span></a>
+        <a href="./track.html">TRACK COMPLAINT <span>↗</span></a>
+      </div>
+    </div>
 
     <div class="lux-ref-bottom">
       <div class="lux-ref-create">
