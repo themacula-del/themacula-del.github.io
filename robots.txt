@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://themacula-del.github.io/sitemap.xml
