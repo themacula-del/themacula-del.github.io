@@ -641,6 +641,21 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 }
 @media(prefers-reduced-motion:reduce){.hero-slide img,.disc,.portfolio-arrow{transition:none!important}.hero-slide.active img{transform:none!important}}
 </style>
+<style id="macula-brand-marquee-final">
+/* THE MACULA — seamless logo + wordmark ticker */
+.macula-brand-marquee{width:100vw;margin-top:18px;margin-left:calc(-50vw + 50%);overflow:hidden;background:transparent;border:0;padding:0;position:relative;}
+.macula-brand-marquee-track{display:flex;width:max-content;align-items:center;will-change:transform;animation:maculaMarqueeFinal 25s linear infinite;}
+.macula-brand-marquee-group{display:flex;align-items:center;flex:none;gap:30px;padding-right:30px;}
+.macula-brand-marquee-word{display:block;flex:0 0 auto;white-space:nowrap;color:#f2f2ee;font-family:var(--display,Arial,sans-serif);font-size:clamp(24px,3.2vw,42px);font-weight:300;line-height:1;letter-spacing:-.065em;text-transform:uppercase;}
+.macula-brand-marquee-group img{display:block;width:104px;height:40px;flex:0 0 104px;object-fit:contain;object-position:center;}
+@keyframes maculaMarqueeFinal{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:800px){
+ .macula-brand-marquee{margin-top:10px}.macula-brand-marquee-track{animation-duration:21s}.macula-brand-marquee-group{gap:22px;padding-right:22px}.macula-brand-marquee-word{font-size:28px}.macula-brand-marquee-group img{width:86px;height:34px;flex-basis:86px}
+ .contact{min-height:0!important;padding-bottom:28px!important}.contact .contact-grid{margin-bottom:0!important}.footer{margin-top:0!important}
+}
+@media(max-width:480px){.macula-brand-marquee{margin-top:8px}.macula-brand-marquee-group{gap:18px;padding-right:18px}.macula-brand-marquee-word{font-size:24px}.macula-brand-marquee-group img{width:78px;height:31px;flex-basis:78px}.contact{padding-bottom:22px!important}}
+@media(prefers-reduced-motion:reduce){.macula-brand-marquee-track{animation:none}}
+</style>
 </head>
 <body><div class="grain"></div><div class="pre"><img src="./assets/asset-001.webp" alt="THE MACULA"></div>
 <header class="header" id="header"><a class="brand" href="#top"><img src="./assets/asset-001.webp" alt="THE MACULA"></a><nav class="nav"><a href="#work">Work</a><a href="#services">Services</a><a href="#furniture">Furniture</a><a href="#interior">Interior</a><a href="#architecture">Architecture</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#complaints">Pengaduan</a></nav><button class="menu" id="menuBtn">Menu</button></header>
@@ -849,7 +864,26 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     </div>
   </div>
 </section>
-<section class="section contact" id="contact"><div><div class="kicker">Contact</div><h2>Have a project<br>in mind?</h2></div><div class="contact-grid"><div class="contacts"><a href="https://wa.me/6283166990840" target="_blank">WhatsApp<br>+62 831-6699-0840</a><a href="mailto:themacula.admin@gmail.com">Email<br>themacula.admin@gmail.com</a><a href="https://instagram.com/themacula" target="_blank">Instagram<br>@THEMACULA</a><a href="https://facebook.com/" target="_blank">Facebook<br>THE MACULA</a></div><div class="cta"><a href="https://wa.me/6283166990840?text=Halo%20THE%20MACULA%2C%20saya%20ingin%20memulai%20pembahasan%20mengenai%20proyek%20saya.%20Mohon%20informasi%20langkah%20selanjutnya." target="_blank">Start a project →</a><div class="macula-brand-marquee" aria-label="THE MACULA brand"><div class="macula-brand-marquee-track"><div class="macula-brand-marquee-group"><img src="./assets/asset-001.webp" alt="THE MACULA" loading="lazy"><img src="./assets/asset-001.webp" alt="" aria-hidden="true" loading="lazy"><img src="./assets/asset-001.webp" alt="" aria-hidden="true" loading="lazy"><img src="./assets/asset-001.webp" alt="" aria-hidden="true" loading="lazy"><img src="./assets/asset-001.webp" alt="" aria-hidden="true" loading="lazy"><img src="./assets/asset-001.webp" alt="" aria-hidden="true" loading="lazy"></div><div class="macula-brand-marquee-group" aria-hidden="true"><img src="./assets/asset-001.webp" alt="" loading="lazy"><img src="./assets/asset-001.webp" alt="" loading="lazy"><img src="./assets/asset-001.webp" alt="" loading="lazy"><img src="./assets/asset-001.webp" alt="" loading="lazy"><img src="./assets/asset-001.webp" alt="" loading="lazy"><img src="./assets/asset-001.webp" alt="" loading="lazy"></div></div></div></div></div></section>
+<section class="section contact" id="contact"><div><div class="kicker">Contact</div><h2>Have a project<br>in mind?</h2></div><div class="contact-grid"><div class="contacts"><a href="https://wa.me/6283166990840" target="_blank">WhatsApp<br>+62 831-6699-0840</a><a href="mailto:themacula.admin@gmail.com">Email<br>themacula.admin@gmail.com</a><a href="https://instagram.com/themacula" target="_blank">Instagram<br>@THEMACULA</a><a href="https://facebook.com/" target="_blank">Facebook<br>THE MACULA</a></div><div class="cta"><a href="https://wa.me/6283166990840?text=Halo%20THE%20MACULA%2C%20saya%20ingin%20memulai%20pembahasan%20mengenai%20proyek%20saya.%20Mohon%20informasi%20langkah%20selanjutnya." target="_blank">Start a project →</a><div class="macula-brand-marquee" aria-label="THE MACULA brand">
+  <div class="macula-brand-marquee-track">
+    <div class="macula-brand-marquee-group">
+      <span class="macula-brand-marquee-word">THE MACULA</span>
+      <img src="./assets/asset-001.webp" alt="THE MACULA" loading="lazy">
+      <span class="macula-brand-marquee-word">THE MACULA</span>
+      <img src="./assets/asset-001.webp" alt="" aria-hidden="true" loading="lazy">
+      <span class="macula-brand-marquee-word">THE MACULA</span>
+      <img src="./assets/asset-001.webp" alt="" aria-hidden="true" loading="lazy">
+    </div>
+    <div class="macula-brand-marquee-group" aria-hidden="true">
+      <span class="macula-brand-marquee-word">THE MACULA</span>
+      <img src="./assets/asset-001.webp" alt="" loading="lazy">
+      <span class="macula-brand-marquee-word">THE MACULA</span>
+      <img src="./assets/asset-001.webp" alt="" loading="lazy">
+      <span class="macula-brand-marquee-word">THE MACULA</span>
+      <img src="./assets/asset-001.webp" alt="" loading="lazy">
+    </div>
+  </div>
+</div></div></div></section>
 <div class="macula-scroll-progress" id="maculaScrollProgress" aria-hidden="true"></div>
 </main><footer class="footer"><span>THE MACULA · INDONESIA</span><span>Furniture · Interior · Exterior · Architecture</span><span>© 2026 THE MACULA</span></footer>
 <div class="modal" id="modal"><div class="modal-inner"><button class="modal-close" id="modalClose">Close ×</button><div class="modal-grid"><div class="modal-main"><img id="modalMain" alt=""></div><div class="modal-copy"><div class="kicker" id="modalKicker"></div><h2 class="display" id="modalTitle"></h2><p id="modalDesc">Custom work by THE MACULA.</p><div class="modal-actions"><a class="photo-wa" id="modalWhatsapp" target="_blank">Start a discussion <span>→</span></a><button class="photo-wa" id="modalSharePhoto" type="button">SEND SELECTED PHOTO VIA WHATSAPP <span>↗</span></button></div></div></div><div class="modal-gallery" id="modalGallery"></div></div></div>
@@ -1586,56 +1620,5 @@ body{background:var(--lux-black)}
 }
 </style>
 
-
-<style id="macula-brand-marquee">
-/* Seamless brand ticker — placed directly beneath START A PROJECT */
-.macula-brand-marquee{
-  width:100vw;
-  margin-top:22px;
-  margin-left:calc(-50vw + 50%);
-  overflow:hidden;
-  background:transparent;
-  border:0;
-  padding:0;
-  position:relative;
-}
-.macula-brand-marquee-track{
-  display:flex;
-  width:max-content;
-  will-change:transform;
-  animation:maculaMarquee 24s linear infinite;
-}
-.macula-brand-marquee-group{
-  display:flex;
-  align-items:center;
-  flex:none;
-  gap:34px;
-  padding-right:34px;
-}
-.macula-brand-marquee-group img{
-  display:block;
-  width:118px;
-  height:44px;
-  flex:0 0 118px;
-  object-fit:contain;
-  object-position:center;
-}
-@keyframes maculaMarquee{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
-@media(max-width:800px){
-  .macula-brand-marquee{margin-top:18px}
-  .macula-brand-marquee-track{animation-duration:20s}
-  .macula-brand-marquee-group{gap:22px;padding-right:22px}
-  .macula-brand-marquee-group img{width:92px;height:36px;flex-basis:92px}
-}
-@media(max-width:480px){
-  .macula-brand-marquee{margin-top:16px}
-  .macula-brand-marquee-group{gap:18px;padding-right:18px}
-  .macula-brand-marquee-group img{width:82px;height:32px;flex-basis:82px}
-}
-@media(prefers-reduced-motion:reduce){.macula-brand-marquee-track{animation:none}}
-</style>
 
 </body></html>
