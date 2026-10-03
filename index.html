@@ -1288,7 +1288,7 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 
 
 <style id="macula-track-v40">
-/* THE MACULA — Track Complaint V40
+/* THE MACULA — Track Complaint V44
    UI-only redesign. Existing ticket lookup API / database contract is untouched. */
 .macula-track-v40{background:#050505!important;color:#f4f3ef!important;padding:118px 4.2vw 125px!important;overflow:clip!important}
 .macula-track-v40:before{display:none!important}
@@ -1628,50 +1628,134 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   </div>
 </section>
 <section class="section light"><div class="head"><div class="kicker">The Approach</div><h2 class="display">Distinctive by<br>design.</h2></div><div class="intro"><p>Every project starts with the character of the space, then moves through proportion, material and detail.</p><p class="small">Furniture, interior, exterior and architecture are treated as connected disciplines rather than separate pieces.</p></div></section>
-<section class="review-section complaint-section" id="complaints">
-  <div class="review-wrap">
-    <div class="review-head">
-      <div>
-        <div class="kicker">Complaints</div>
-        <h2 class="review-title">Report a<br>concern.</h2>
+<section class="review-section complaint-section mc-complaint-v44" id="complaints">
+  <div class="mc-complaint-shell">
+    <div class="mc-complaint-hero">
+      <div class="mc-complaint-copy">
+        <div class="mc-kicker">SUBMIT A COMPLAINT</div>
+        <h2>We’re Here<br><span>to Help.</span></h2>
+        <p>Report a concern, issue, or service-related matter to THE MACULA. Every complaint is recorded and assigned a ticket number for follow-up.</p>
       </div>
-      <p class="review-intro">Report a concern, issue, or service-related matter to THE MACULA. Every complaint is recorded and assigned a ticket number for follow-up.</p>
-    </div>
-
-    <div class="review-card complaint-card">
-      <div class="review-rating-label">COMPLAINT FORM · PRIVATE &amp; DIRECT</div>
-
-      <div class="review-fields complaint-fields">
-        <input id="complaintName" type="text" maxlength="60" autocomplete="name" placeholder="Your name *">
-        <input id="complaintContact" type="text" maxlength="80" autocomplete="tel" placeholder="WhatsApp number / Email *">
-
-        <select id="complaintType" aria-label="Complaint type">
-          <option value="">Complaint type *</option>
-          <option value="Product">Product</option>
-          <option value="Service">Service</option>
-          <option value="Project">Project</option>
-          <option value="Delivery">Delivery</option>
-          <option value="Other">Other</option>
-        </select>
-
-        <input id="complaintProduct" type="text" maxlength="80" placeholder="Product / Project Code (optional)">
-        <textarea id="complaintText" maxlength="2000" placeholder="Describe your complaint in detail... *" rows="7"></textarea>
-
-        <label class="complaint-upload" for="complaintPhoto">
-          <span class="upload-title">ATTACH PHOTO / EVIDENCE</span>
-          <span class="upload-name" id="complaintPhotoName">No photo selected</span>
-          <span class="upload-action">CHOOSE FILE ↗</span>
-        </label>
-        <input id="complaintPhoto" type="file" accept="image/jpeg,image/png,image/webp" hidden>
-      </div>
-
-      <div class="review-bottom complaint-bottom">
-        <span id="complaintHint">* Required · Maximum photo size 3 MB</span>
-        <button class="review-submit" id="complaintSubmit" type="button">SUBMIT COMPLAINT <span>↗</span></button>
+      <div class="mc-complaint-art" aria-hidden="true">
+        <div class="mc-art-orbit mc-art-orbit-a"></div>
+        <div class="mc-art-orbit mc-art-orbit-b"></div>
+        <div class="mc-art-board">
+          <div class="mc-art-glow"></div>
+          <div class="mc-art-clip"></div>
+          <div class="mc-art-line mc-art-line-a"></div>
+          <div class="mc-art-line mc-art-line-b"></div>
+          <div class="mc-art-line mc-art-line-c"></div>
+          <div class="mc-art-line mc-art-line-d"></div>
+        </div>
+        <div class="mc-art-chat"><i></i><i></i><i></i></div>
+        <div class="mc-art-alert">!</div>
       </div>
     </div>
 
-    <div class="review-note" id="complaintResult">Complaints are recorded directly in THE MACULA system and the initial status is OPEN.</div>
+    <div class="mc-complaint-grid">
+      <div class="mc-form-card">
+        <div class="mc-form-head">
+          <div class="mc-form-title-wrap">
+            <div class="mc-icon-box">▤</div>
+            <div>
+              <h3>Complaint Form</h3>
+              <span>Private &amp; Direct</span>
+            </div>
+          </div>
+          <div class="mc-secure"><span>♙</span><span>Your data is secure<br>and confidential.</span></div>
+        </div>
+
+        <div class="mc-form-body">
+          <div class="mc-field">
+            <span class="mc-field-icon">♙</span>
+            <div class="mc-field-content">
+              <label for="complaintName">Your name <b>*</b></label>
+              <input id="complaintName" type="text" maxlength="60" autocomplete="name" placeholder="Enter your full name">
+            </div>
+          </div>
+
+          <div class="mc-field">
+            <span class="mc-field-icon">◫</span>
+            <div class="mc-field-content">
+              <label for="complaintContact">WhatsApp number / Email <b>*</b></label>
+              <input id="complaintContact" type="text" maxlength="80" autocomplete="tel" placeholder="e.g. +62 812 3456 7890 or your@email.com">
+            </div>
+          </div>
+
+          <div class="mc-field">
+            <span class="mc-field-icon">⊞</span>
+            <div class="mc-field-content mc-select-wrap">
+              <label for="complaintType">Complaint type <b>*</b></label>
+              <select id="complaintType" aria-label="Complaint type">
+                <option value="">Select complaint type</option>
+                <option value="Product">Product</option>
+                <option value="Service">Service</option>
+                <option value="Project">Project</option>
+                <option value="Delivery">Delivery</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mc-field">
+            <span class="mc-field-icon">◇</span>
+            <div class="mc-field-content">
+              <label for="complaintProduct">Product / Project Code <em>(optional)</em></label>
+              <input id="complaintProduct" type="text" maxlength="80" placeholder="e.g. MAC-202610 / Product Name">
+            </div>
+          </div>
+
+          <div class="mc-field mc-field-textarea">
+            <span class="mc-field-icon">▤</span>
+            <div class="mc-field-content">
+              <label for="complaintText">Describe your complaint in detail <b>*</b></label>
+              <textarea id="complaintText" maxlength="1000" placeholder="Please provide as much detail as possible, including when the issue occurred, what happened, and any relevant information." rows="7"></textarea>
+              <div class="mc-counter"><span id="complaintCounter">0</span>/1000</div>
+            </div>
+          </div>
+
+          <label class="mc-upload" for="complaintPhoto">
+            <span class="mc-upload-icon">⌕</span>
+            <span class="mc-upload-copy"><strong>Attach photo / Evidence</strong><small>Upload photos, screenshots or relevant files<br>(Maximum size 3 MB per file)</small></span>
+            <span class="mc-upload-btn">⇧ &nbsp; Choose File</span>
+            <span class="upload-name" id="complaintPhotoName">No photo selected</span>
+          </label>
+          <input id="complaintPhoto" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+
+          <div class="mc-file-help">Allowed format: JPG, PNG, PDF (Max. 3 MB)</div>
+
+          <button class="mc-submit" id="complaintSubmit" type="button">SUBMIT COMPLAINT <span>→</span></button>
+        </div>
+
+        <div class="mc-form-foot"><span class="mc-info-icon">i</span><span id="complaintHint">Complaints are recorded directly in THE MACULA system and the initial status is <strong>OPEN.</strong></span></div>
+        <div class="mc-result" id="complaintResult" aria-live="polite"></div>
+      </div>
+
+      <aside class="mc-side">
+        <div class="mc-side-card">
+          <div class="mc-side-title"><span class="mc-side-icon">⚙</span><h3>How It Works</h3></div>
+          <ol>
+            <li><b>Fill in the form</b><span>Provide the required information and details.</span></li>
+            <li><b>Submit</b><span>Your complaint will be recorded in our system.</span></li>
+            <li><b>Get a ticket number</b><span>You will receive a ticket number for follow-up.</span></li>
+            <li><b>Track the status</b><span>Check the progress anytime on our Track Complaint page.</span></li>
+          </ol>
+        </div>
+
+        <div class="mc-side-card">
+          <div class="mc-side-title"><span class="mc-side-icon">♢</span><h3>Important</h3></div>
+          <div class="mc-important"><span>♙</span><p>Your information is safe<br>and confidential.</p></div>
+          <div class="mc-important"><span>▤</span><p>Please provide accurate<br>and complete details.</p></div>
+          <div class="mc-important"><span>▧</span><p>Attach clear photos or evidence<br>to help us resolve the issue faster.</p></div>
+        </div>
+
+        <div class="mc-side-card mc-help-card">
+          <div class="mc-side-title"><span class="mc-side-icon">♧</span><h3>Need Help?</h3></div>
+          <p>If you have urgent issues, you can contact our support team directly.</p>
+          <a href="#contact" class="mc-contact-btn">▢ &nbsp; Contact Support</a>
+        </div>
+      </aside>
+    </div>
   </div>
 </section>
 <section class="review-section tracking-section macula-track-v40" id="tracking">
@@ -1817,6 +1901,44 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
  .complaint-upload{grid-template-columns:1fr;gap:8px}
  .upload-action{grid-column:auto;grid-row:auto}
 }
+</style>
+<style>
+/* V44 — Premium Complaint Form. Frontend-only redesign; IDs/API/data structure preserved. */
+.mc-complaint-v44{padding:105px 3.8vw 100px!important;background:radial-gradient(circle at 78% 12%,rgba(235,180,45,.075),transparent 28%),#050607!important;color:#f6f4ee;overflow:hidden}
+.mc-complaint-shell{max-width:1220px;margin:0 auto}
+.mc-complaint-hero{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:3vw;min-height:390px;padding:10px 18px 48px}
+.mc-complaint-copy{padding-left:18px}
+.mc-kicker{font-size:12px;letter-spacing:.25em;color:#f2c84b;text-transform:uppercase;margin-bottom:18px}
+.mc-complaint-copy h2{font-family:var(--display);font-size:clamp(58px,7vw,98px);line-height:.87;letter-spacing:-.06em;font-weight:400;margin:0 0 28px}
+.mc-complaint-copy h2 span{color:#f5c640}
+.mc-complaint-copy p{max-width:560px;color:#a9a9a7;font-size:16px;line-height:1.55;margin:0}
+.mc-complaint-art{position:relative;height:355px;min-width:380px;filter:drop-shadow(0 0 30px rgba(239,188,46,.11))}
+.mc-art-orbit{position:absolute;border:2px solid rgba(246,195,54,.65);border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;transform:rotate(-19deg);box-shadow:0 0 12px rgba(247,195,58,.25)}
+.mc-art-orbit-a{width:430px;height:170px;right:-35px;top:86px}
+.mc-art-orbit-b{width:360px;height:145px;right:8px;top:122px;transform:rotate(21deg);opacity:.6}
+.mc-art-board{position:absolute;width:220px;height:275px;right:120px;top:28px;border:1px solid rgba(255,255,255,.35);border-radius:17px;background:linear-gradient(145deg,#20262a,#080b0c);transform:rotate(7deg);box-shadow:14px 18px 0 rgba(0,0,0,.28),0 0 35px rgba(245,193,50,.18);overflow:hidden}
+.mc-art-board:before{content:"";position:absolute;left:22px;right:22px;top:30px;height:28px;border-radius:6px;background:linear-gradient(90deg,#f5c849,#8e6e24);opacity:.92}
+.mc-art-clip{position:absolute;left:58px;top:-12px;width:105px;height:47px;border:1px solid rgba(255,255,255,.28);border-radius:8px;background:#111718;box-shadow:0 0 18px rgba(242,191,48,.35)}
+.mc-art-line{position:absolute;left:27px;height:10px;border-radius:8px;background:#4c5659;opacity:.72}.mc-art-line-a{top:93px;width:154px}.mc-art-line-b{top:128px;width:132px}.mc-art-line-c{top:163px;width:150px}.mc-art-line-d{top:198px;width:108px}
+.mc-art-glow{position:absolute;inset:0;background:radial-gradient(circle at 75% 18%,rgba(248,200,64,.22),transparent 27%)}
+.mc-art-chat{position:absolute;left:35px;top:178px;width:128px;height:88px;border:4px solid #f5c541;border-radius:27px;background:#101516;transform:rotate(-10deg);box-shadow:0 0 22px rgba(245,197,62,.3)}
+.mc-art-chat:after{content:"";position:absolute;left:15px;bottom:-22px;border-width:20px 22px 0 0;border-style:solid;border-color:#f5c541 transparent transparent transparent;transform:rotate(12deg)}
+.mc-art-chat i{display:inline-block;width:13px;height:13px;margin:31px 5px 0;border-radius:50%;background:#f6ca48;box-shadow:0 0 10px rgba(246,202,72,.5)}
+.mc-art-alert{position:absolute;right:35px;bottom:15px;width:95px;height:95px;border:4px solid #f5c541;border-radius:50%;display:grid;place-items:center;font-size:56px;font-weight:700;color:#f5c541;background:#111617;box-shadow:0 0 30px rgba(246,195,50,.28)}
+.mc-complaint-grid{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:18px;align-items:start}
+.mc-form-card,.mc-side-card{border:1px solid rgba(255,255,255,.13);background:linear-gradient(145deg,rgba(24,29,31,.92),rgba(8,11,12,.94));border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.22);overflow:hidden}
+.mc-form-head{min-height:98px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.09);gap:25px}
+.mc-form-title-wrap{display:flex;align-items:center;gap:17px}.mc-icon-box{width:58px;height:58px;border-radius:14px;display:grid;place-items:center;font-size:28px;color:#f6ca4d;background:linear-gradient(145deg,#3d3215,#17130a);border:1px solid rgba(245,198,65,.38);box-shadow:0 0 24px rgba(245,195,53,.13)}
+.mc-form-head h3{font-size:29px;margin:0 0 3px;font-weight:600;letter-spacing:-.02em}.mc-form-head span{color:#9d9e9c;font-size:14px}.mc-secure{display:flex;align-items:center;gap:12px;color:#b7b8b5;font-size:13px;line-height:1.35}.mc-secure>span:first-child{font-size:26px;color:#f5c743}
+.mc-form-body{padding:22px 28px 28px}
+.mc-field{display:grid;grid-template-columns:52px 1fr;gap:12px;margin-bottom:20px}.mc-field-icon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#20272c;border:1px solid rgba(255,255,255,.12);font-size:22px;color:#eef0ee}.mc-field-content{min-width:0;position:relative}.mc-field label{display:block;font-size:15px;font-weight:500;margin:0 0 8px}.mc-field label b{color:#f4c541}.mc-field label em{font-style:normal;color:#8b8d8b;font-weight:400;font-size:13px}.mc-field input,.mc-field select,.mc-field textarea{width:100%;box-sizing:border-box;border:1px solid rgba(255,255,255,.2);border-radius:9px;background:#11171a;color:#ecebe7;padding:15px 17px;font:inherit;font-size:15px;outline:none;transition:.22s}.mc-field input::placeholder,.mc-field textarea::placeholder{color:#8d9090}.mc-field input:focus,.mc-field select:focus,.mc-field textarea:focus{border-color:#d4a932;box-shadow:0 0 0 3px rgba(213,169,50,.08)}.mc-field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#d9d8d2 50%),linear-gradient(135deg,#d9d8d2 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px,6px 6px;background-repeat:no-repeat}.mc-field select option{background:#101416;color:#eee}.mc-field textarea{min-height:155px;resize:vertical;line-height:1.55;padding-bottom:30px}.mc-counter{position:absolute;right:14px;bottom:12px;color:#7c7f7e;font-size:12px}
+.mc-upload{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:15px;border:1px dashed rgba(255,255,255,.38);border-radius:12px;padding:17px 19px;margin:8px 0 7px;cursor:pointer;transition:.22s;background:rgba(255,255,255,.012)}.mc-upload:hover{border-color:#e7b93c;background:rgba(238,188,54,.035)}.mc-upload-icon{width:46px;height:46px;border-radius:11px;display:grid;place-items:center;background:#20272c;color:#fff;font-size:30px}.mc-upload-copy strong{display:block;font-size:15px;margin-bottom:5px}.mc-upload-copy small{display:block;color:#a3a5a3;line-height:1.4;font-size:12px}.mc-upload-btn{border:1px solid #e2b735;color:#f4c541;border-radius:999px;padding:11px 18px;font-size:13px;font-weight:600;white-space:nowrap}.mc-upload .upload-name{grid-column:2 / 3;color:#777;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mc-file-help{font-size:12px;color:#777a78;margin:7px 0 17px 64px}
+.mc-submit{width:calc(100% - 64px);margin-left:64px;border:0;border-radius:999px;padding:17px 22px;background:linear-gradient(90deg,#f0b72d,#ffd45d);color:#0b0d0d;font-size:14px;font-weight:800;letter-spacing:.06em;cursor:pointer;box-shadow:0 8px 24px rgba(238,182,40,.2);transition:.22s}.mc-submit:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(238,182,40,.3)}.mc-submit span{font-size:22px;margin-left:10px}.mc-form-foot{display:flex;align-items:center;gap:12px;padding:18px 28px;border-top:1px solid rgba(255,255,255,.08);color:#777a78;font-size:12px;line-height:1.5}.mc-info-icon{width:27px;height:27px;border:1px solid #8a8d8a;border-radius:50%;display:grid;place-items:center;color:#ddd;flex:0 0 auto}.mc-form-foot strong{color:#f4c541}.mc-result{padding:0 28px 20px;color:#c7c8c5;font-size:12px;line-height:1.6}.mc-result:empty{display:none}
+.mc-side{display:flex;flex-direction:column;gap:18px}.mc-side-card{padding:24px 22px}.mc-side-title{display:flex;align-items:center;gap:12px;margin-bottom:20px}.mc-side-title h3{font-size:21px;margin:0}.mc-side-icon{width:39px;height:39px;border-radius:50%;display:grid;place-items:center;color:#f3c343;border:1px solid rgba(243,195,67,.38);background:rgba(243,195,67,.08);font-size:19px}
+.mc-side-card ol{list-style:none;padding:0;margin:0}.mc-side-card ol li{position:relative;padding:0 0 25px 60px;min-height:56px}.mc-side-card ol li:not(:last-child):before{content:"";position:absolute;left:20px;top:42px;width:1px;height:48px;background:linear-gradient(#e3b638,rgba(227,182,56,.15))}.mc-side-card ol li:after{content:counter(item);counter-increment:item;position:absolute;left:0;top:0;width:41px;height:41px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(#f6c948,#d99c1e);color:#111;font-weight:800;font-size:15px}.mc-side-card ol{counter-reset:item}.mc-side-card ol li b{display:block;font-size:14px;margin-bottom:5px}.mc-side-card ol li span{display:block;color:#a1a3a1;font-size:12px;line-height:1.45}
+.mc-important{display:grid;grid-template-columns:43px 1fr;gap:13px;align-items:center;margin:16px 0}.mc-important>span{width:43px;height:43px;border-radius:10px;display:grid;place-items:center;background:#352b13;color:#f5c541;font-size:21px;border:1px solid rgba(245,197,65,.18)}.mc-important p{margin:0;color:#b4b6b3;font-size:12px;line-height:1.5}.mc-help-card>p{color:#a7a9a7;font-size:13px;line-height:1.55;margin:0 0 18px}.mc-contact-btn{display:block;text-align:center;border:1px solid #d9ae36;border-radius:999px;color:#f3c744;padding:12px 16px;font-size:12px;text-decoration:none;transition:.22s}.mc-contact-btn:hover{background:#f3c744;color:#111}
+@media(max-width:900px){.mc-complaint-hero{grid-template-columns:1fr;min-height:auto;padding-bottom:25px}.mc-complaint-copy{padding-left:0}.mc-complaint-art{height:290px;min-width:0;transform:scale(.82);transform-origin:center top;margin-bottom:-50px}.mc-complaint-grid{grid-template-columns:1fr}.mc-side{display:grid;grid-template-columns:1fr 1fr}.mc-help-card{grid-column:1 / -1}}
+@media(max-width:620px){.mc-complaint-v44{padding:75px 15px 70px!important}.mc-complaint-hero{padding:0 4px 20px}.mc-complaint-copy h2{font-size:clamp(53px,17vw,78px)}.mc-complaint-copy p{font-size:14px}.mc-complaint-art{height:245px;transform:scale(.67);margin-bottom:-65px}.mc-form-head{padding:20px 16px;align-items:flex-start;flex-direction:column}.mc-secure{align-self:flex-start}.mc-form-head h3{font-size:25px}.mc-form-body{padding:18px 14px 20px}.mc-field{grid-template-columns:38px 1fr;gap:9px}.mc-field-icon{width:36px;height:36px;font-size:18px}.mc-field label{font-size:14px}.mc-field input,.mc-field select,.mc-field textarea{font-size:14px;padding:13px 14px}.mc-upload{grid-template-columns:48px 1fr}.mc-upload-btn{grid-column:2;justify-self:start}.mc-upload .upload-name{grid-column:2}.mc-file-help{margin-left:0}.mc-submit{width:100%;margin-left:0;padding:16px}.mc-form-foot{padding:16px}.mc-result{padding:0 16px 16px}.mc-side{display:flex}.mc-side-card{padding:20px 18px}}
 </style>
 <style>
 .modal-actions{display:flex;flex-direction:column;align-items:flex-start;gap:18px;margin-top:22px}.photo-wa{border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:13px 18px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#eee;transition:.25s}.photo-wa:hover{background:#fff;color:#000;border-color:#fff}.photo-wa span{margin-left:10px}.modal-thumb{cursor:pointer}.modal-thumb.active{outline:1px solid #fff;outline-offset:2px}@media(max-width:700px){.modal-actions{gap:15px}.photo-wa{font-size:9px;padding:12px 15px}}
@@ -2153,6 +2275,9 @@ document.querySelectorAll('.service-trigger').forEach(btn=>{btn.addEventListener
       reader.readAsDataURL(file);
     });
   }
+  const complaintText=$('complaintText');
+  const complaintCounter=$('complaintCounter');
+  complaintText?.addEventListener('input',()=>{ if(complaintCounter) complaintCounter.textContent=String(Math.min(1000, complaintText.value.length)); });
   photo?.addEventListener('change',()=>{
     const file=photo.files?.[0];
     photoName.textContent=file?file.name:'No photo selected';
