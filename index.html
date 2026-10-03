@@ -1739,18 +1739,6 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
       </div>
     </div>
 
-    <div class="track-example" id="trackExample">
-      <div class="track-example-head">
-        <span>EXAMPLE RESULT</span><b>OPEN</b>
-      </div>
-      <div class="track-timeline" aria-label="Example complaint status timeline">
-        <div class="track-step current"><i>✓</i><div><strong>Ticket Received</strong><small>Your complaint has been received and is being reviewed.</small></div><em>✓</em></div>
-        <div class="track-step active"><i>◷</i><div><strong>In Progress</strong><small>Our team is working on your complaint.</small></div><em>◷</em></div>
-        <div class="track-step"><i>…</i><div><strong>Waiting for Resolution</strong><small>Your complaint is in the resolution process.</small></div><em>…</em></div>
-        <div class="track-step"><i>✓</i><div><strong>Completed</strong><small>Your complaint has been resolved.</small></div><em>✓</em></div>
-      </div>
-    </div>
-
   </div>
 </section>
 <section class="section contact" id="contact"><div><div class="kicker">Contact</div><h2>Have a project<br>in mind?</h2></div><div class="contact-grid"><div class="contacts"><a href="https://wa.me/6283166990840" target="_blank">WhatsApp<br>+62 831-6699-0840</a><a href="mailto:themacula.admin@gmail.com">Email<br>themacula.admin@gmail.com</a><a href="https://instagram.com/themacula" target="_blank">Instagram<br>@THEMACULA</a><a href="https://facebook.com/" target="_blank">Facebook<br>THE MACULA</a></div><div class="cta"><a href="https://wa.me/6283166990840?text=Halo%20THE%20MACULA%2C%20saya%20ingin%20memulai%20pembahasan%20mengenai%20proyek%20saya.%20Mohon%20informasi%20langkah%20selanjutnya." target="_blank">Start a project →</a><div class="macula-brand-marquee" aria-label="THE MACULA brand">
@@ -2316,8 +2304,8 @@ document.querySelectorAll('.service-trigger').forEach(btn=>{btn.addEventListener
     }).join('');
     const safeTicket=escapeHtml(ticket);
     const safeStatus=escapeHtml(rawStatus);
-    const safeDate=escapeHtml(data.date||'—');
-    result.innerHTML='<div class="track-live-result"><div class="track-example-head"><span>TICKET STATUS · '+safeTicket+'</span><b>'+safeStatus+'</b></div><div class="track-timeline">'+steps+'</div><div class="track-live-meta"><span>LAST RECORDED<strong>'+safeDate+'</strong></span><span>CURRENT STAGE<strong>'+escapeHtml(statusLabel(rawStatus))+'</strong></span></div></div>';
+    const safeDate=escapeHtml(data.updatedAt||data.date||'—');
+    result.innerHTML='<div class="track-live-result"><div class="track-example-head"><span>TICKET STATUS · '+safeTicket+'</span><b>'+safeStatus+'</b></div><div class="track-timeline">'+steps+'</div><div class="track-live-meta"><span>LAST UPDATED<strong>'+safeDate+'</strong></span><span>CURRENT STAGE<strong>'+escapeHtml(statusLabel(rawStatus))+'</strong></span></div></div>';
   }
   button.addEventListener('click',async()=>{
     const ticket=clean(input.value);
