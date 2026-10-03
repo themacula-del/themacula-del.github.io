@@ -44,10 +44,23 @@ button{border:0;background:none;color:inherit;cursor:pointer}img{display:block;w
 @media(max-width:900px){.header{padding:17px 24px}.nav{display:none}.menu{display:block}.brand img{width:86px}.hero{min-height:82svh;padding:140px 24px 70px}.hero h1{font-size:clamp(62px,18vw,105px)}.hero-meta{font-size:8px}.section{padding:92px 24px}.section-head{grid-template-columns:1fr;gap:30px;margin-bottom:48px}.controls{display:block}.search{width:100%;margin-top:12px}.material-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.detail-wrap{padding:82px 22px 40px}.detail-grid{grid-template-columns:1fr;gap:28px}.detail-copy{padding-top:0}.note{padding:90px 24px}.note-grid{grid-template-columns:1fr;gap:30px}.mobile-menu{grid-template-columns:100% 0}.mobile-image{display:none}.mobile-panel{padding:7.5vh 9%}.mobile-close{right:7%;top:5.8vh}}
 @media(max-width:520px){.header{padding:15px 22px}.brand img{width:82px;height:42px}.hero{padding:125px 22px 55px}.hero h1{font-size:clamp(57px,18.5vw,88px)}.hero-meta{display:grid;grid-template-columns:1fr;gap:9px}.section{padding:78px 22px}.display{font-size:clamp(47px,13vw,76px)}.material-grid{gap:8px}.material-info{left:13px;right:13px;bottom:13px}.material-info h3{font-size:20px}.material-info p{font-size:7px}.swatch{left:13px;top:13px;width:28px;height:28px}.filter{padding:10px 13px;font-size:8px}.count{text-align:left}.spec{grid-template-columns:95px 1fr}.close{right:18px;top:18px;width:42px;height:42px}.footer{padding:20px 22px;display:grid;gap:8px}}
 </style>
-
+<style id="macula-repair-css">
 /* THE MACULA — inner page back navigation */
 .back-home{display:inline-flex;align-items:center;gap:10px;padding:11px 16px;border:1px solid rgba(229,161,91,.55);border-radius:999px;color:#f2eee7;font-size:9px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s ease;white-space:nowrap}.back-home span{font-size:14px;line-height:1;transition:transform .3s ease}.back-home:hover{background:#f5f4ef;color:#090909;border-color:#f5f4ef}.back-home:hover span{transform:translate(3px,-3px)}
 @media(max-width:900px){.back-home{font-size:8px;padding:10px 13px;gap:8px}.back-home span{font-size:13px}}
+</style>
+<style id="macula-inner-page-navigation-final">
+/* Internal pages use Back to Home only. */
+.header .nav,.header .menu{display:none!important}
+.header .back-home{display:inline-flex!important;align-items:center;justify-content:center}
+@media(max-width:900px){.header{padding:15px 22px!important}.header .back-home{display:inline-flex!important}.header .brand img{width:82px!important;height:42px!important}}
+/* Portfolio cards intentionally carry no visible file/project title. */
+.portfolio-page-copy h3,.portfolio-card-info,.card-info{display:none!important}
+/* Premium inquiry actions */
+.modal-actions{display:grid!important;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;max-width:560px}
+.photo-wa{min-height:60px!important;padding:16px 18px!important;border-radius:16px!important;display:flex!important;align-items:center!important;justify-content:space-between!important}
+@media(max-width:800px){.modal-actions{grid-template-columns:1fr!important;gap:10px!important;max-width:none!important}.photo-wa{min-height:56px!important}}
+</style>
 </head>
 <body>
 <div class="grain"></div>
