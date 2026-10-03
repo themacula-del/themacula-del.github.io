@@ -851,7 +851,6 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 </section>
 <section class="section contact" id="contact"><div><div class="kicker">Contact</div><h2>Have a project<br>in mind?</h2></div><div class="contact-grid"><div class="contacts"><a href="https://wa.me/6283166990840" target="_blank">WhatsApp<br>+62 831-6699-0840</a><a href="mailto:themacula.admin@gmail.com">Email<br>themacula.admin@gmail.com</a><a href="https://instagram.com/themacula" target="_blank">Instagram<br>@THEMACULA</a><a href="https://facebook.com/" target="_blank">Facebook<br>THE MACULA</a></div><div class="cta"><a href="https://wa.me/6283166990840?text=Halo%20THE%20MACULA%2C%20saya%20ingin%20memulai%20pembahasan%20mengenai%20proyek%20saya.%20Mohon%20informasi%20langkah%20selanjutnya." target="_blank">Start a project →</a></div></div></section>
 <div class="macula-scroll-progress" id="maculaScrollProgress" aria-hidden="true"></div>
-<div class="macula-mobile-cta" id="maculaMobileCta"><a href="https://wa.me/6283166990840?text=Halo%20THE%20MACULA%2C%20saya%20ingin%20memulai%20pembahasan%20mengenai%20proyek%20saya.%20Mohon%20informasi%20langkah%20selanjutnya." target="_blank" rel="noopener">START A PROJECT <span>↗</span></a></div>
 </main><footer class="footer"><span>THE MACULA · INDONESIA</span><span>Furniture · Interior · Exterior · Architecture</span><span>© 2026 THE MACULA</span></footer>
 <div class="modal" id="modal"><div class="modal-inner"><button class="modal-close" id="modalClose">Close ×</button><div class="modal-grid"><div class="modal-main"><img id="modalMain" alt=""></div><div class="modal-copy"><div class="kicker" id="modalKicker"></div><h2 class="display" id="modalTitle"></h2><p id="modalDesc">Custom work by THE MACULA.</p><div class="modal-actions"><a class="photo-wa" id="modalWhatsapp" target="_blank">Start a discussion <span>→</span></a><button class="photo-wa" id="modalSharePhoto" type="button">SEND SELECTED PHOTO VIA WHATSAPP <span>↗</span></button></div></div></div><div class="modal-gallery" id="modalGallery"></div></div></div>
 
@@ -1586,5 +1585,48 @@ body{background:var(--lux-black)}
  .hero-slide,.hero-slide img,.disc,.disc:before,.portfolio-slider .card img,.cta a{transition:none!important}
 }
 </style>
+
+
+<style id="macula-brand-marquee">
+.macula-brand-marquee{
+  width:100%;
+  overflow:hidden;
+  background:#000;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  padding:clamp(34px,5vw,72px) 0;
+}
+.macula-brand-marquee-track{
+  display:flex;
+  width:max-content;
+  animation:maculaMarquee 28s linear infinite;
+  will-change:transform;
+}
+.macula-brand-marquee-track img{
+  display:block;
+  width:min(100vw,1536px);
+  height:auto;
+  flex:none;
+  object-fit:cover;
+}
+@keyframes maculaMarquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+@media(max-width:800px){
+  .macula-brand-marquee{padding:28px 0}
+  .macula-brand-marquee-track{animation-duration:22s}
+  .macula-brand-marquee-track img{width:100vw}
+}
+@media(prefers-reduced-motion:reduce){
+  .macula-brand-marquee-track{animation:none}
+}
+</style>
+<section class="macula-brand-marquee" aria-label="THE MACULA brand">
+  <div class="macula-brand-marquee-track">
+    <img src="assets/macula-marquee.png" alt="THE MACULA" loading="lazy">
+    <img src="assets/macula-marquee.png" alt="" aria-hidden="true" loading="lazy">
+  </div>
+</section>
 
 </body></html>
