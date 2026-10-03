@@ -1889,9 +1889,6 @@ const ints=DATA.filter(x=>x.category==='interior'), arch=DATA.filter(x=>x.catego
 if(ints[0])document.getElementById('interiorHero').src=ints[0].src;
 document.getElementById('architectureHero').src='./assets/architecture-hero.webp';
 
-// V20 — expandable service trades
-document.querySelectorAll('.service-trigger').forEach(btn=>{btn.addEventListener('click',()=>{const row=btn.closest('.service-expandable');const open=row.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');document.querySelectorAll('.service-expandable.open').forEach(other=>{if(other!==row){other.classList.remove('open');const b=other.querySelector('.service-trigger');if(b)b.setAttribute('aria-expanded','false')}})})});
-
 // V22 — every jobdesk item opens WhatsApp with a pre-filled inquiry.
 (function(){
   const WA_NUMBER='6283166990840';
@@ -2768,4 +2765,25 @@ body{background:var(--lux-black)}
 }
 </style>
 
+
+<style id="macula-smooth-services-v4">
+.services-section{overflow:clip!important}.services-section:before{display:none!important}
+.services-hero-bg{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 58%,rgba(0,0,0,.72) 78%,transparent 100%)!important;mask-image:linear-gradient(to bottom,#000 0%,#000 58%,rgba(0,0,0,.72) 78%,transparent 100%)!important}
+.services-section::after{content:"";position:absolute;z-index:1;top:-1px;left:0;right:0;height:170px;pointer-events:none;background:linear-gradient(180deg,rgba(7,7,7,.03),rgba(7,7,7,.22) 46%,#070707 100%)!important}
+.services-head,.services-list{position:relative;z-index:3!important}.service-row{transform:translateZ(0);backface-visibility:hidden;will-change:transform}.service-row:hover{transform:none!important}
+.service-panel{height:0!important;max-height:none!important;overflow:hidden!important;box-sizing:border-box!important;padding-top:0!important;padding-bottom:0!important;border-top-width:0!important;opacity:0!important;will-change:height,opacity;transition:none!important}
+.service-expandable.open .service-panel{max-height:none!important;overflow:hidden!important;border-top-width:1px!important}
+.service-panel>p,.service-panel .service-jobs,.service-panel .service-wa{transform:translate3d(0,12px,0)!important;opacity:0!important;transition:none!important;will-change:transform,opacity}
+.service-expandable.open .service-panel>p,.service-expandable.open .service-panel .service-jobs,.service-expandable.open .service-panel .service-wa{transform:none!important;opacity:1!important}
+.service-arrow{will-change:transform}@media(prefers-reduced-motion:reduce){.service-panel,.service-panel>p,.service-panel .service-jobs,.service-panel .service-wa,.service-arrow{transition:none!important}}
+</style>
+<script id="macula-smooth-services-js-v4">
+(function(){
+const rows=[...document.querySelectorAll('.service-expandable')];if(!rows.length)return;const D=720,E='cubic-bezier(0.22,0.72,0.18,1)';let active=null,busy=false;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function animatePanel(panel,from,to,fadeIn){if(reduced){panel.style.setProperty('height',to+'px','important');panel.style.setProperty('opacity',fadeIn?'1':'0','important');return Promise.resolve()}if(panel._macAnim)panel._macAnim.cancel();panel.style.setProperty('height',from+'px','important');panel.style.setProperty('opacity',fadeIn?'0':'1','important');const a=panel.animate([{height:from+'px',opacity:fadeIn?0:1},{height:to+'px',opacity:fadeIn?1:0}],{duration:D,easing:E,fill:'forwards'});panel._macAnim=a;return a.finished.catch(()=>{}).then(()=>{if(panel._macAnim===a)panel._macAnim=null;panel.style.setProperty('height',to+'px','important');panel.style.setProperty('opacity',fadeIn?'1':'0','important')})}
+function reveal(row){['p','.service-jobs','.service-wa'].forEach((sel,i)=>{const el=sel==='p'?row.querySelector('.service-panel>p'):row.querySelector('.service-panel '+sel);if(!el)return;el.animate([{transform:'translate3d(0,10px,0)',opacity:0},{transform:'translate3d(0,0,0)',opacity:1}],{duration:420,delay:70+i*50,easing:'cubic-bezier(.22,.72,.18,1)',fill:'forwards'})})}
+async function toggle(row){if(busy)return;busy=true;const old=active;if(old===row){const p=row.querySelector('.service-panel'),h=p.getBoundingClientRect().height;row.classList.remove('open');row.querySelector('.service-trigger')?.setAttribute('aria-expanded','false');await animatePanel(p,h,0,false);active=null;busy=false;return}const tasks=[];if(old){const p=old.querySelector('.service-panel'),h=p.getBoundingClientRect().height;old.classList.remove('open');old.querySelector('.service-trigger')?.setAttribute('aria-expanded','false');tasks.push(animatePanel(p,h,0,false))}const p=row.querySelector('.service-panel');row.classList.add('open');row.querySelector('.service-trigger')?.setAttribute('aria-expanded','true');p.style.setProperty('height','0px','important');p.style.setProperty('opacity','0','important');const target=p.scrollHeight;tasks.push(animatePanel(p,0,target,true));active=row;reveal(row);await Promise.all(tasks);if(row.classList.contains('open'))p.style.setProperty('height',p.scrollHeight+'px','important');busy=false}
+rows.forEach(row=>{const b=row.querySelector('.service-trigger');if(b)b.addEventListener('click',e=>{e.preventDefault();toggle(row)})});addEventListener('resize',()=>{if(active&&!busy){const p=active.querySelector('.service-panel');p.style.setProperty('height',p.scrollHeight+'px','important')}},{passive:true});
+})();
+</script>
 </body></html>
