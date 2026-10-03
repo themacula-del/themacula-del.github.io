@@ -1446,7 +1446,105 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .material-home .material-visual{background:#101010}.material-home .material-visual img{width:100%;height:100%;object-fit:cover;display:block;min-height:520px}.material-home .split-copy{align-self:center}
 @media(max-width:900px){.philosophy-grid,.why-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}.home-work-grid{grid-template-columns:1fr}.home-work-card,.home-work-card:first-child{min-height:360px}.home-work-card img,.home-work-card:first-child img{min-height:360px}.material-home{display:grid}.material-home .material-visual img{min-height:340px}}
 @media(max-width:560px){.hero-actions{gap:8px}.hero-action{font-size:8px;min-height:40px;padding:0 14px}.philosophy-grid,.process-grid,.why-grid{margin-top:34px}.philosophy-grid article,.process-grid article,.why-grid article{min-height:auto;padding:22px 18px}.home-work-grid{margin-top:34px;gap:10px}.home-work-card,.home-work-card:first-child,.home-work-card img,.home-work-card:first-child img{min-height:300px}.material-home .material-visual img{min-height:300px}}
-</style></head>
+</style>
+<style id="macula-editorial-cards-v1">
+/* Premium editorial treatment — removes dark card backgrounds without changing content/data */
+.philosophy-grid,
+.process-grid,
+.why-grid{
+  background:transparent!important;
+  border:0!important;
+  gap:0!important;
+  position:relative;
+}
+.philosophy-grid article,
+.process-grid article,
+.why-grid article{
+  background:transparent!important;
+  border:0!important;
+  border-top:1px solid rgba(16,16,16,.14)!important;
+  border-radius:0!important;
+  color:#151515!important;
+  min-height:190px;
+  padding:30px 28px 32px!important;
+  position:relative;
+  transition:background .35s ease,padding-left .35s ease;
+}
+.philosophy-grid article:last-child,
+.process-grid article:last-child,
+.why-grid article:last-child{
+  border-bottom:1px solid rgba(16,16,16,.14)!important;
+}
+.philosophy-grid span,
+.process-grid span{
+  color:#b17b43!important;
+  font-size:10px!important;
+  letter-spacing:.2em!important;
+  margin-bottom:34px!important;
+}
+.philosophy-grid h3,
+.process-grid h3,
+.why-grid h3{
+  color:rgba(16,16,16,.42)!important;
+  font-size:10px!important;
+  letter-spacing:.2em!important;
+  font-weight:500!important;
+  margin:0 0 13px!important;
+}
+.philosophy-grid p,
+.process-grid p,
+.why-grid p{
+  color:rgba(16,16,16,.68)!important;
+  line-height:1.7!important;
+  font-size:14px!important;
+  max-width:520px;
+}
+.philosophy-grid article:hover,
+.process-grid article:hover,
+.why-grid article:hover{
+  background:rgba(16,16,16,.025)!important;
+  padding-left:34px!important;
+}
+/* Process: retain the existing 5-step structure, but make it editorial and airy */
+.process-grid{
+  border-top:1px solid rgba(16,16,16,.14)!important;
+}
+.process-grid article{
+  min-height:215px;
+  border-right:1px solid rgba(16,16,16,.12)!important;
+}
+.process-grid article:last-child{border-right:0!important;}
+/* On mobile, use clean horizontal dividers rather than boxed tiles */
+@media(max-width:900px){
+  .philosophy-grid article,
+  .process-grid article,
+  .why-grid article{
+    min-height:175px;
+    padding:26px 0 28px!important;
+  }
+  .philosophy-grid article:hover,
+  .process-grid article:hover,
+  .why-grid article:hover{padding-left:0!important;}
+  .process-grid article{border-right:0!important;}
+}
+@media(max-width:560px){
+  .philosophy-grid,
+  .process-grid,
+  .why-grid{margin-top:34px!important;}
+  .philosophy-grid article,
+  .process-grid article,
+  .why-grid article{
+    min-height:158px;
+    padding:24px 0 26px!important;
+  }
+  .philosophy-grid span,
+  .process-grid span{margin-bottom:25px!important;}
+  .philosophy-grid p,
+  .process-grid p,
+  .why-grid p{font-size:13px!important;line-height:1.65!important;}
+}
+</style>
+</head>
 <body><div class="grain"></div><div class="pre"><img alt="THE MACULA" src="./assets/asset-001.webp"/></div>
 <header class="header" id="header"><a class="brand" href="#top"><img alt="THE MACULA" src="./assets/asset-001.webp"/></a><nav aria-label="Main navigation" class="nav"><a data-nav="home" href="./index.html">Home</a><a data-nav="services" href="./services.html">Services</a><a data-nav="portfolio" href="./portfolio.html">Portfolio</a><a data-nav="material" href="./materials.html">Material</a><a data-nav="about" href="./index.html#about">About</a><a data-nav="contact" href="./index.html#contact">Contact</a></nav><button class="menu" id="menuBtn">Menu</button></header>
 <div aria-hidden="true" class="mobile-menu" id="mobileMenu">
