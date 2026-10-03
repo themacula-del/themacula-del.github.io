@@ -1202,6 +1202,90 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   .lux-ref-social{gap:3px!important}
 }
 </style>
+
+<style id="menu-final-verified-fix">
+/* Verified final menu fixes: no data/function changes. */
+.mobile-menu .lux-menu-panel{
+  background:linear-gradient(90deg,#050505 0%,#070706 38%,#0a0a09 62%,rgba(10,10,9,.78) 82%,rgba(10,10,9,.28) 100%)!important;
+}
+.mobile-menu .lux-ref-bottom{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  grid-template-rows:auto auto!important;
+  column-gap:14px!important;
+  row-gap:12px!important;
+  align-items:end!important;
+  width:100%!important;
+}
+.mobile-menu .lux-ref-create{
+  grid-column:1 / -1!important;
+  grid-row:1!important;
+  width:auto!important;
+  flex:none!important;
+}
+.mobile-menu .lux-ref-touch{
+  grid-column:1!important;
+  grid-row:2!important;
+  width:150px!important;
+  min-width:0!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+  margin:0!important;
+  padding:0 13px 0 18px!important;
+  height:40px!important;
+}
+.mobile-menu .lux-ref-touch span{
+  font-size:18px!important;
+}
+.mobile-menu .lux-ref-social{
+  grid-column:2!important;
+  grid-row:2!important;
+  width:auto!important;
+  min-width:0!important;
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  gap:4px!important;
+  margin:0!important;
+  padding:0!important;
+  justify-content:flex-end!important;
+  align-items:center!important;
+}
+.mobile-menu .lux-ref-social a{
+  flex:0 0 27px!important;
+  width:27px!important;
+  height:27px!important;
+  box-sizing:border-box!important;
+}
+.mobile-menu .lux-ref-social svg{
+  width:12px!important;
+  height:12px!important;
+}
+@media(max-width:480px){
+  .mobile-menu .lux-menu-panel{
+    background:linear-gradient(90deg,#050505 0%,#080807 40%,#0b0b0a 64%,rgba(11,11,10,.76) 84%,rgba(11,11,10,.30) 100%)!important;
+  }
+  .mobile-menu .lux-ref-bottom{
+    column-gap:8px!important;
+    row-gap:10px!important;
+  }
+  .mobile-menu .lux-ref-touch{
+    width:145px!important;
+    height:38px!important;
+    padding-left:16px!important;
+    padding-right:11px!important;
+    font-size:6px!important;
+  }
+  .mobile-menu .lux-ref-touch span{font-size:17px!important}
+  .mobile-menu .lux-ref-social{gap:3px!important}
+  .mobile-menu .lux-ref-social a{
+    flex-basis:25px!important;
+    width:25px!important;
+    height:25px!important;
+  }
+  .mobile-menu .lux-ref-social svg{width:11px!important;height:11px!important}
+}
+</style>
+
 </head>
 <body><div class="grain"></div><div class="pre"><img src="./assets/asset-001.webp" alt="THE MACULA"></div>
 <header class="header" id="header"><a class="brand" href="#top"><img src="./assets/asset-001.webp" alt="THE MACULA"></a><nav class="nav"><a href="#work">Work</a><a href="#services">Services</a><a href="#furniture">Furniture</a><a href="#interior">Interior</a><a href="#architecture">Architecture</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#complaints">Pengaduan</a></nav><button class="menu" id="menuBtn">Menu</button></header>
