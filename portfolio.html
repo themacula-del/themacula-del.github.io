@@ -1482,8 +1482,7 @@ body{background:#090909;color:#f4f3ee}
 </style>
 </head>
 <body><div class="grain"></div><div class="pre"><img src="./assets/asset-001.webp" alt="THE MACULA"></div>
-<body><div class="grain"></div><div class="pre"><img src="./assets/asset-001.webp" alt="THE MACULA"></div>
-<header class="header" id="header"><a class="brand" href="/index.html#top"><img src="./assets/asset-001.webp" alt="THE MACULA"></a><nav class="nav"><a href="./services.html">Services</a><a href="./portfolio.html">Portfolio</a><a href="./materials.html">Material</a><a href="#about">About</a><a href="#contact">Contact</a></nav><button class="menu" id="menuBtn">Menu</button></header>
+<header class="header" id="header"><a class="brand" href="./index.html#top"><img src="./assets/asset-001.webp" alt="THE MACULA"></a><nav class="nav" aria-label="Main navigation"><a href="./index.html" data-nav="home">Home</a><a href="./services.html" data-nav="services">Services</a><a href="./portfolio.html" data-nav="portfolio" aria-current="page">Portfolio</a><a href="./materials.html" data-nav="material">Material</a><a href="./index.html#about" data-nav="about">About</a><a href="./index.html#contact" data-nav="contact">Contact</a></nav><button class="menu" id="menuBtn">Menu</button></header>
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <section class="lux-menu-panel">
     <div class="lux-ref-brand">
@@ -1492,9 +1491,9 @@ body{background:#090909;color:#f4f3ee}
     </div>
 
     <nav class="lux-menu-links" aria-label="Main navigation">
-      <a href="./index.html#top" class="is-current"><span class="lux-num">01</span><span class="lux-label">HOME</span><span class="lux-arrow" aria-hidden="true">→</span></a>
+      <a href="./index.html"><span class="lux-num">01</span><span class="lux-label">HOME</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./services.html"><span class="lux-num">02</span><span class="lux-label">SERVICES</span><span class="lux-arrow" aria-hidden="true">→</span></a>
-      <a href="./portfolio.html"><span class="lux-num">03</span><span class="lux-label">PORTFOLIO</span><span class="lux-arrow" aria-hidden="true">→</span></a>
+      <a href="./portfolio.html" class="is-current" aria-current="page"><span class="lux-num">03</span><span class="lux-label">PORTFOLIO</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./materials.html"><span class="lux-num">04</span><span class="lux-label">MATERIAL</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./index.html#about"><span class="lux-num">05</span><span class="lux-label">ABOUT</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./index.html#contact"><span class="lux-num">06</span><span class="lux-label">CONTACT</span><span class="lux-arrow" aria-hidden="true">→</span></a>
@@ -1505,7 +1504,7 @@ body{background:#090909;color:#f4f3ee}
         <span>LET’S CREATE</span>
         <span>A BETTER SPACE TOGETHER</span>
       </div>
-      <a class="lux-ref-touch" href="/index.html#contact">GET IN TOUCH <span>→</span></a>
+      <a class="lux-ref-touch" href="./index.html#contact">GET IN TOUCH <span>→</span></a>
       <div class="lux-ref-social" aria-label="Social media">
         <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.7" r="1" class="fill"/></svg></a>
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 20v-7h2.4l.4-2.8h-2.8V8.4c0-.8.3-1.4 1.5-1.4h1.5V4.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.2V13h2.4v7h2.9Z"/></svg></a>
@@ -1586,22 +1585,7 @@ document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.da
 render(initialCategory);
 if(requestedCategory) setTimeout(()=>document.getElementById('filters')?.scrollIntoView({behavior:'smooth',block:'start'}),120);
 // Header + menu behavior, matching the original THE MACULA concept.
-const header=document.getElementById('header');function updateHeader(){header.classList.remove('light','dark');header.classList.add('dark');}updateHeader();const mb=document.getElementById('menuBtn'),menu=document.getElementById('mobileMenu'),luxClose=document.getElementById('luxMenuClose');function closeMobileMenu(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true');mb.textContent='Menu';document.body.style.overflow=''}function openMobileMenu(){menu.classList.add('open');menu.setAttribute('aria-hidden','false');mb.textContent='Close';document.body.style.overflow='hidden'}mb.onclick=()=>menu.classList.contains('open')?closeMobileMenu():openMobileMenu();luxClose.onclick=closeMobileMenu;document.querySelectorAll('.mobile-menu a').forEach(a=>{
-  a.addEventListener('click',function(e){
-    const href=this.getAttribute('href')||'';
-    if(/^\/?(index|portfolio|services|materials)\.html(?:[?#].*)?$/.test(href)){
-      e.preventDefault(); closeMobileMenu(); window.location.assign(new URL(href,window.location.href).href);
-    }else closeMobileMenu();
-  });
-});
-document.querySelectorAll('.nav a').forEach(a=>{
-  a.addEventListener('click',function(e){
-    const href=this.getAttribute('href')||'';
-    if(/^\/?(index|portfolio|services|materials)\.html(?:[?#].*)?$/.test(href)){
-      e.preventDefault(); window.location.assign(new URL(href,window.location.href).href);
-    }
-  });
-});
+const header=document.getElementById('header');function updateHeader(){header.classList.remove('light','dark');header.classList.add('dark');}updateHeader();const mb=document.getElementById('menuBtn'),menu=document.getElementById('mobileMenu'),luxClose=document.getElementById('luxMenuClose');function closeMobileMenu(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true');mb.textContent='Menu';document.body.style.overflow=''}function openMobileMenu(){menu.classList.add('open');menu.setAttribute('aria-hidden','false');mb.textContent='Close';document.body.style.overflow='hidden'}mb.onclick=()=>menu.classList.contains('open')?closeMobileMenu():openMobileMenu();luxClose.onclick=closeMobileMenu;document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',closeMobileMenu));
 window.addEventListener('load',()=>setTimeout(()=>document.querySelector('.pre')?.classList.add('hide'),450));
 </script>
 </body></html>

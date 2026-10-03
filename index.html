@@ -1438,7 +1438,7 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 </style>
 </head>
 <body><div class="grain"></div><div class="pre"><img src="./assets/asset-001.webp" alt="THE MACULA"></div>
-<header class="header" id="header"><a class="brand" href="#top"><img src="./assets/asset-001.webp" alt="THE MACULA"></a><nav class="nav"><a href="./services.html">Services</a><a href="./portfolio.html">Portfolio</a><a href="./materials.html">Material</a><a href="#about">About</a><a href="#contact">Contact</a></nav><button class="menu" id="menuBtn">Menu</button></header>
+<header class="header" id="header"><a class="brand" href="#top"><img src="./assets/asset-001.webp" alt="THE MACULA"></a><nav class="nav" aria-label="Main navigation"><a href="./index.html" data-nav="home">Home</a><a href="./services.html" data-nav="services">Services</a><a href="./portfolio.html" data-nav="portfolio">Portfolio</a><a href="./materials.html" data-nav="material">Material</a><a href="./index.html#about" data-nav="about">About</a><a href="./index.html#contact" data-nav="contact">Contact</a></nav><button class="menu" id="menuBtn">Menu</button></header>
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <section class="lux-menu-panel">
     <div class="lux-ref-brand">
@@ -1447,7 +1447,7 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     </div>
 
     <nav class="lux-menu-links" aria-label="Main navigation">
-      <a href="./index.html#top" class="is-current"><span class="lux-num">01</span><span class="lux-label">HOME</span><span class="lux-arrow" aria-hidden="true">→</span></a>
+      <a href="./index.html" class="is-current" aria-current="page"><span class="lux-num">01</span><span class="lux-label">HOME</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./services.html"><span class="lux-num">02</span><span class="lux-label">SERVICES</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./portfolio.html"><span class="lux-num">03</span><span class="lux-label">PORTFOLIO</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./materials.html"><span class="lux-num">04</span><span class="lux-label">MATERIAL</span><span class="lux-arrow" aria-hidden="true">→</span></a>
@@ -1498,8 +1498,8 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 </section>
 <section class="section light" id="about"><div class="head"><div class="kicker">The Studio</div><h2 class="display">We create spaces<br>with character.</h2></div><div class="intro"><p>Furniture, interior, exterior and architecture shaped by proportion, material, detail and the way people live.</p><p class="small">THE MACULA develops bespoke design work from Indonesia, bringing furniture, interiors and architectural ideas together as one visual language.</p></div></section>
 <section class="section light" id="work"><div class="head"><div class="kicker">Disciplines</div><h2 class="display">What we do.</h2></div><div class="disciplines"><article class="disc"><h3>Furniture</h3><p>Bespoke pieces designed around the character and proportions of each space.</p></article><article class="disc"><h3>Interior</h3><p>Functional interiors with refined materials, lighting and thoughtful details.</p></article><article class="disc"><h3>Exterior</h3><p>Contemporary facades and outdoor environments shaped by context and light.</p></article><article class="disc"><h3>Architecture</h3><p>Residential concepts developed from spatial idea through visual realization.</p></article></div></section>
-<section class="split light" id="interior"><div class="split-media"><img id="interiorHero" loading="lazy" decoding="async" alt="THE MACULA interior"></div><div class="split-copy"><div class="kicker">Interior</div><h2 class="display">Designed around<br>the way you live.</h2><p>From kitchens and living spaces to media walls and custom cabinetry, we develop interiors that balance function, warmth and visual clarity.</p><a class="arrow" href="/portfolio.html?category=interior">Explore the portfolio <span>→</span></a></div></section>
-<section class="split dark" id="architecture"><div class="split-media" style="order:2"><img id="architectureHero" loading="lazy" decoding="async" alt="THE MACULA architecture"></div><div class="split-copy" style="order:1"><div class="kicker">Architecture</div><h2 class="display">Form.<br>Space.<br>Light.</h2><p>Residential architecture built around strong proportions, considered materials and a clear relationship between inside and outside.</p><a class="arrow" href="/portfolio.html?category=architecture">View architecture <span>→</span></a></div></section>
+<section class="split light" id="interior"><div class="split-media"><img id="interiorHero" loading="lazy" decoding="async" alt="THE MACULA interior"></div><div class="split-copy"><div class="kicker">Interior</div><h2 class="display">Designed around<br>the way you live.</h2><p>From kitchens and living spaces to media walls and custom cabinetry, we develop interiors that balance function, warmth and visual clarity.</p><a class="arrow" href="./portfolio.html?category=interior">Explore the portfolio <span>→</span></a></div></section>
+<section class="split dark" id="architecture"><div class="split-media" style="order:2"><img id="architectureHero" loading="lazy" decoding="async" alt="THE MACULA architecture"></div><div class="split-copy" style="order:1"><div class="kicker">Architecture</div><h2 class="display">Form.<br>Space.<br>Light.</h2><p>Residential architecture built around strong proportions, considered materials and a clear relationship between inside and outside.</p><a class="arrow" href="./portfolio.html?category=architecture">View architecture <span>→</span></a></div></section>
 <section class="section light"><div class="head"><div class="kicker">The Approach</div><h2 class="display">Distinctive by<br>design.</h2></div><div class="intro"><p>Every project starts with the character of the space, then moves through proportion, material and detail.</p><p class="small">Furniture, interior, exterior and architecture are treated as connected disciplines rather than separate pieces.</p></div></section>
 <section class="review-section complaint-section mc-complaint-v44" id="complaints">
   <div class="mc-complaint-shell">
@@ -1935,28 +1935,8 @@ const heroSlides=document.getElementById('heroSlides');
 HERO.forEach((src,i)=>{const s=document.createElement('div');s.className='hero-slide'+(i===0?' active':'');s.innerHTML=`<img src="${src}" alt="THE MACULA project">`;heroSlides.appendChild(s)});
 let hi=0,ht;function showHero(n){const slides=[...heroSlides.children];hi=(n+slides.length)%slides.length;slides.forEach((x,i)=>x.classList.toggle('active',i===hi));clearInterval(ht);ht=setInterval(()=>showHero(hi+1),3600)}ht=setInterval(()=>showHero(hi+1),3600);
 const IMG_FALLBACK='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width=1200 height=800 viewBox="0 0 1200 800"><rect width="1200" height="800" fill="#111"/><text x="600" y="405" text-anchor="middle" fill="#666" font-family="Arial" font-size="22" letter-spacing="6">THE MACULA</text></svg>');
-const header=document.getElementById('header');function updateHeader(){header.classList.remove('light','dark');const y=scrollY+90;const els=[...document.querySelectorAll('main > section, .hero')];let current=els[0];for(const el of els){if(y>=el.offsetTop)current=el;else break;}const isLight=current&&current.classList.contains('light');header.classList.add(isLight?'light':'dark');header.classList.remove('scrolled');}addEventListener('scroll',updateHeader,{passive:true});addEventListener('resize',updateHeader,{passive:true});updateHeader();const mb=document.getElementById('menuBtn'),menu=document.getElementById('mobileMenu'),luxClose=document.getElementById('luxMenuClose');function closeMobileMenu(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true');mb.textContent='Menu';document.body.style.overflow=''}function openMobileMenu(){menu.classList.add('open');menu.setAttribute('aria-hidden','false');mb.textContent='Close';document.body.style.overflow='hidden'}mb.onclick=()=>menu.classList.contains('open')?closeMobileMenu():openMobileMenu();luxClose.onclick=closeMobileMenu;document.querySelectorAll('.mobile-menu a').forEach(a=>{
-  a.addEventListener('click',function(e){
-    const href=this.getAttribute('href')||'';
-    if(/^\/?(portfolio|services|materials)\.html(?:[?#].*)?$/.test(href)){
-      e.preventDefault();
-      closeMobileMenu();
-      window.location.assign(new URL(href,window.location.href).href);
-    }else{
-      closeMobileMenu();
-    }
-  });
-});
+const header=document.getElementById('header');function updateHeader(){header.classList.remove('light','dark');const y=scrollY+90;const els=[...document.querySelectorAll('main > section, .hero')];let current=els[0];for(const el of els){if(y>=el.offsetTop)current=el;else break;}const isLight=current&&current.classList.contains('light');header.classList.add(isLight?'light':'dark');header.classList.remove('scrolled');}addEventListener('scroll',updateHeader,{passive:true});addEventListener('resize',updateHeader,{passive:true});updateHeader();const mb=document.getElementById('menuBtn'),menu=document.getElementById('mobileMenu'),luxClose=document.getElementById('luxMenuClose');function closeMobileMenu(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true');mb.textContent='Menu';document.body.style.overflow=''}function openMobileMenu(){menu.classList.add('open');menu.setAttribute('aria-hidden','false');mb.textContent='Close';document.body.style.overflow='hidden'}mb.onclick=()=>menu.classList.contains('open')?closeMobileMenu():openMobileMenu();luxClose.onclick=closeMobileMenu;document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',closeMobileMenu));
 // Explicit page navigation for the desktop header as well.
-document.querySelectorAll('.nav a').forEach(a=>{
-  a.addEventListener('click',function(e){
-    const href=this.getAttribute('href')||'';
-    if(/^\/?(portfolio|services|materials)\.html(?:[?#].*)?$/.test(href)){
-      e.preventDefault();
-      window.location.assign(new URL(href,window.location.href).href);
-    }
-  });
-});
 history.scrollRestoration='manual';
 (function(){
   const nav=performance.getEntriesByType('navigation')[0];
