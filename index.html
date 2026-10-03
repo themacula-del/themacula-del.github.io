@@ -1440,7 +1440,34 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .material-home .material-visual{background:#101010}.material-home .material-visual img{width:100%;height:100%;object-fit:cover;display:block;min-height:520px}.material-home .split-copy{align-self:center}
 @media(max-width:900px){.philosophy-grid,.why-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}.home-work-grid{grid-template-columns:1fr}.home-work-card,.home-work-card:first-child{min-height:360px}.home-work-card img,.home-work-card:first-child img{min-height:360px}.material-home{display:grid}.material-home .material-visual img{min-height:340px}}
 @media(max-width:560px){.hero-actions{gap:8px}.hero-action{font-size:8px;min-height:40px;padding:0 14px}.philosophy-grid,.process-grid,.why-grid{margin-top:34px}.philosophy-grid article,.process-grid article,.why-grid article{min-height:auto;padding:22px 18px}.home-work-grid{margin-top:34px;gap:10px}.home-work-card,.home-work-card:first-child,.home-work-card img,.home-work-card:first-child img{min-height:300px}.material-home .material-visual img{min-height:300px}}
-</style></head>
+</style>
+<style id="macula-home-final-refinement-v2">
+/* THE MACULA — requested final homepage refinement. Frontend only; data/API unchanged. */
+/* 1) Hero actions sit directly beneath “Designing spaces with character.” */
+.hero-content .hero-actions{margin:18px 0 0!important;align-self:flex-start!important;}
+/* 2) Remove the photographic / boxed hero background for a quieter premium opening.
+   Portfolio DATA and its hero rotation logic remain intact; only the visual presentation is changed. */
+.hero{background:
+  radial-gradient(80% 70% at 78% 28%,rgba(229,161,91,.075),transparent 55%),
+  radial-gradient(70% 90% at 18% 70%,rgba(255,255,255,.035),transparent 60%),
+  linear-gradient(145deg,#090909 0%,#050505 55%,#0b0b0a 100%)!important;}
+.hero-slides{display:none!important;}
+.hero-shade{background:
+  radial-gradient(65% 70% at 50% 45%,rgba(255,255,255,.025),transparent 68%),
+  linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.20) 52%,rgba(0,0,0,.78) 100%)!important;}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.018) 48%,transparent 72%);opacity:.7;}
+.hero-content{z-index:3;}
+/* 3) Give the moving THE MACULA mark more breathing room below the contact CTA. */
+.macula-brand-marquee{margin-top:72px!important;}
+@media(max-width:800px){
+  .hero-content .hero-actions{margin-top:18px!important;}
+  .macula-brand-marquee{margin-top:56px!important;}
+}
+@media(max-width:480px){
+  .macula-brand-marquee{margin-top:52px!important;}
+}
+</style>
+</head>
 <body><div class="grain"></div><div class="pre"><img alt="THE MACULA" src="./assets/asset-001.webp"/></div>
 <header class="header" id="header"><a class="brand" href="#top"><img alt="THE MACULA" src="./assets/asset-001.webp"/></a><nav aria-label="Main navigation" class="nav"><a data-nav="home" href="./index.html">Home</a><a data-nav="services" href="./services.html">Services</a><a data-nav="portfolio" href="./portfolio.html">Portfolio</a><a data-nav="material" href="./materials.html">Material</a><a data-nav="about" href="./index.html#about">About</a><a data-nav="contact" href="./index.html#contact">Contact</a></nav><button class="menu" id="menuBtn">Menu</button></header>
 <div aria-hidden="true" class="mobile-menu" id="mobileMenu">
@@ -1474,7 +1501,7 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 </button>
 </div>
 <main id="top">
-<section class="hero"><div class="hero-slides" id="heroSlides"></div><div class="hero-shade"></div><div class="hero-content"><h1>THE<br/>MACULA</h1><div class="hero-eyebrow">Furniture · Interior · Exterior · Architecture</div><div class="hero-actions"><a class="hero-action" href="./portfolio.html">Explore our work →</a><a class="hero-action ghost" href="./index.html#contact">Start a project →</a></div><div class="hero-bottom"><span>Designing spaces with character.</span><span>Scroll to explore <b>↓</b></span></div></div></section>
+<section class="hero"><div class="hero-slides" id="heroSlides"></div><div class="hero-shade"></div><div class="hero-content"><h1>THE<br/>MACULA</h1><div class="hero-eyebrow">Furniture · Interior · Exterior · Architecture</div><div class="hero-bottom"><span>Designing spaces with character.</span><span>Scroll to explore <b>↓</b></span></div><div class="hero-actions"><a class="hero-action" href="./portfolio.html">Explore our work →</a><a class="hero-action ghost" href="./index.html#contact">Start a project →</a></div></div></section>
 <!-- THE MACULA — A closer look / video feature -->
 <section aria-label="A closer look" class="macula-video-intro">
 <div class="macula-video-intro-inner">
