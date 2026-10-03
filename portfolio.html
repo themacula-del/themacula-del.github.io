@@ -1478,7 +1478,7 @@ body{background:#090909;color:#f4f3ee}
 </head>
 <body><div class="grain"></div><div class="pre"><img src="./assets/asset-001.webp" alt="THE MACULA"></div>
 <body><div class="grain"></div><div class="pre"><img src="./assets/asset-001.webp" alt="THE MACULA"></div>
-<header class="header" id="header"><a class="brand" href="./index.html#top"><img src="./assets/asset-001.webp" alt="THE MACULA"></a><nav class="nav"><a href="./portfolio.html">Work</a><a href="./services.html">Services</a><a href="./portfolio.html#furniture">Furniture</a><a href="./portfolio.html#interior">Interior</a><a href="./portfolio.html#architecture">Architecture</a><a href="./index.html#about">About</a><a href="./index.html#contact">Contact</a><a href="./index.html#complaints">Pengaduan</a><a href="./materials.html">Material</a></nav><button class="menu" id="menuBtn">Menu</button></header>
+<header class="header" id="header"><a class="brand" href="./index.html#top"><img src="./assets/asset-001.webp" alt="THE MACULA"></a><nav class="nav"><a href="./portfolio.html">Portfolio</a><a href="./services.html">Services</a><a href="./portfolio.html?category=furniture">Furniture</a><a href="./portfolio.html?category=interior">Interior</a><a href="./portfolio.html?category=architecture">Exterior</a><a href="./index.html#about">About</a><a href="./index.html#contact">Contact</a><a href="./index.html#complaints">Pengaduan</a><a href="./materials.html">Material</a></nav><button class="menu" id="menuBtn">Menu</button></header>
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <section class="lux-menu-panel">
     <div class="lux-ref-brand">
@@ -1488,11 +1488,11 @@ body{background:#090909;color:#f4f3ee}
 
     <nav class="lux-menu-links" aria-label="Main navigation">
       <a href="#top" class="is-current"><span class="lux-num">01</span><span class="lux-label">HOME</span><span class="lux-arrow" aria-hidden="true">→</span></a>
-      <a href="./portfolio.html"><span class="lux-num">02</span><span class="lux-label">WORK</span><span class="lux-arrow" aria-hidden="true">→</span></a>
+      <a href="./portfolio.html"><span class="lux-num">02</span><span class="lux-label">PORTFOLIO</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./services.html"><span class="lux-num">03</span><span class="lux-label">SERVICES</span><span class="lux-arrow" aria-hidden="true">→</span></a>
-      <a href="./portfolio.html#furniture"><span class="lux-num">04</span><span class="lux-label">FURNITURE</span><span class="lux-arrow" aria-hidden="true">→</span></a>
-      <a href="./portfolio.html#interior"><span class="lux-num">05</span><span class="lux-label">INTERIOR</span><span class="lux-arrow" aria-hidden="true">→</span></a>
-      <a href="./portfolio.html#architecture"><span class="lux-num">06</span><span class="lux-label">EXTERIOR</span><span class="lux-arrow" aria-hidden="true">→</span></a>
+      <a href="./portfolio.html?category=furniture"><span class="lux-num">04</span><span class="lux-label">FURNITURE</span><span class="lux-arrow" aria-hidden="true">→</span></a>
+      <a href="./portfolio.html?category=interior"><span class="lux-num">05</span><span class="lux-label">INTERIOR</span><span class="lux-arrow" aria-hidden="true">→</span></a>
+      <a href="./portfolio.html?category=architecture"><span class="lux-num">06</span><span class="lux-label">EXTERIOR</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./index.html#about"><span class="lux-num">07</span><span class="lux-label">ABOUT</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./index.html#contact"><span class="lux-num">08</span><span class="lux-label">CONTACT</span><span class="lux-arrow" aria-hidden="true">→</span></a>
       <a href="./index.html#complaints"><span class="lux-num">09</span><span class="lux-label">PENGADUAN</span><span class="lux-arrow" aria-hidden="true">→</span></a>
@@ -1578,7 +1578,11 @@ gallery.addEventListener('click',e=>{if(e.target.closest('.portfolio-page-arrow'
 document.getElementById('modalClose').onclick=closeModal;modal.onclick=e=>{if(e.target===modal)closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();if(e.key==='ArrowLeft')showPortfolio(activeIndex-1);if(e.key==='ArrowRight')showPortfolio(activeIndex+1)});
 sharePhoto.onclick=()=>{if(!currentModalItem)return;window.location.href='https://wa.me/6283166990840?text='+encodeURIComponent(buildWhatsAppMessage(currentModalItem));};
 document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.filter);}));
-render('furniture');
+const requestedCategory=new URLSearchParams(window.location.search).get('category');
+const initialCategory=['furniture','interior','architecture'].includes(requestedCategory)?requestedCategory:'furniture';
+document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.filter===initialCategory));
+render(initialCategory);
+if(requestedCategory) setTimeout(()=>document.getElementById('filters')?.scrollIntoView({behavior:'smooth',block:'start'}),120);
 // Header + menu behavior, matching the original THE MACULA concept.
 const header=document.getElementById('header');function updateHeader(){header.classList.remove('light','dark');header.classList.add('dark');}updateHeader();const mb=document.getElementById('menuBtn'),menu=document.getElementById('mobileMenu'),luxClose=document.getElementById('luxMenuClose');function closeMobileMenu(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true');mb.textContent='Menu';document.body.style.overflow=''}function openMobileMenu(){menu.classList.add('open');menu.setAttribute('aria-hidden','false');mb.textContent='Close';document.body.style.overflow='hidden'}mb.onclick=()=>menu.classList.contains('open')?closeMobileMenu():openMobileMenu();luxClose.onclick=closeMobileMenu;document.querySelectorAll('.mobile-menu a').forEach(a=>a.onclick=closeMobileMenu);
 window.addEventListener('load',()=>setTimeout(()=>document.querySelector('.pre')?.classList.add('hide'),450));
