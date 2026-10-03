@@ -2449,28 +2449,40 @@ body{background:var(--lux-black)}
    Existing service data, expandable behavior and WhatsApp logic remain intact. */
 .services-section{
   position:relative!important;
-  overflow:hidden!important;
+  overflow:visible!important;
+  margin-top:-1px!important;
   padding:0 5vw 110px!important;
   background:#070707!important;
   color:#f7f7f3!important;
+}
+.services-section:before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  top:-110px;left:0;right:0;
+  height:180px;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(7,7,7,0),#070707 88%);
 }
 .services-hero-bg{
   position:absolute;
   z-index:0;
   top:0;left:0;right:0;
-  height:min(560px,62vw);
-  min-height:430px;
+  height:min(610px,67vw);
+  min-height:460px;
   background-image:
     linear-gradient(90deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.60) 43%,rgba(0,0,0,.18) 100%),
     linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(7,7,7,.10) 45%,#070707 100%),
     url("./assets/service-hero.jpg");
   background-size:cover;
   background-position:center center;
+  mask-image:linear-gradient(to bottom,#000 0%,#000 72%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 72%,transparent 100%);
 }
 .services-head{
   position:relative!important;
   z-index:2!important;
-  min-height:min(560px,62vw);
+  min-height:min(610px,67vw);
   display:flex!important;
   flex-direction:column!important;
   justify-content:center!important;
@@ -2632,13 +2644,22 @@ body{background:var(--lux-black)}
   overflow:hidden!important;
   background:rgba(5,5,5,.94)!important;
   border-top:0 solid rgba(229,161,91,.28)!important;
-  transition:max-height .6s ease,opacity .35s ease,padding .45s ease,border-top-width .3s ease!important;
+  transition:max-height .7s cubic-bezier(.22,.61,.36,1),opacity .35s ease,padding .55s cubic-bezier(.22,.61,.36,1),border-top-width .3s ease!important;
 }
 .service-expandable.open .service-panel{
   max-height:2400px!important;
   opacity:1!important;
   padding:28px 30px 32px!important;
   border-top-width:1px!important;
+}
+.service-panel>p,.service-panel .service-jobs,.service-panel .service-wa{
+  transform:translateY(-8px);
+  opacity:0;
+  transition:transform .55s cubic-bezier(.22,.61,.36,1),opacity .45s ease;
+}
+.service-expandable.open .service-panel>p,.service-expandable.open .service-panel .service-jobs,.service-expandable.open .service-panel .service-wa{
+  transform:translateY(0);
+  opacity:1;
 }
 .service-panel>p{
   max-width:760px!important;
@@ -2703,6 +2724,7 @@ body{background:var(--lux-black)}
 }
 
 @media(max-width:600px){
+  .services-section:before{top:-70px;height:120px}
   .services-section{padding:0 14px 78px!important}
   .services-hero-bg{
     height:475px;
